@@ -1,0 +1,378 @@
+@font-face {
+  font-family: "Fraunces";
+  src: url("../assets/fonts/fraunces.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fraunces";
+  src: url("../assets/fonts/fraunces-italic.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Figtree";
+  src: url("../assets/fonts/figtree.woff2") format("woff2");
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --casca: #1d1410;
+  --casca-2: #2a1e18;
+  --creme: #f7efe0;
+  --creme-2: #efe3cd;
+  --ambar: #fcb040; /* cor do logótipo */
+  --tijolo: #96380f;
+  --tinta: #2b1f19;
+  --tinta-suave: #5f4e43;
+  --claro-suave: #cfc0ad;
+  --linha-clara: #dbcab0;
+  --linha-escura: #4a382d;
+  --ardosia: #22282a;
+  --titulos: "Fraunces", Georgia, serif;
+  --texto: "Figtree", "Segoe UI", system-ui, sans-serif;
+  --largura: 76rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--creme);
+  color: var(--tinta);
+  font: 400 1.0625rem/1.6 var(--texto);
+}
+
+img { display: block; max-width: 100%; height: auto; }
+ul { margin: 0; padding: 0; list-style: none; }
+a { color: inherit; }
+
+h1, h2, h3 {
+  margin: 0;
+  font-family: var(--titulos);
+  font-weight: 500;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+h1 em, h2 em { color: var(--ambar); font-weight: 400; }
+h2 { font-size: clamp(2rem, 1.5rem + 2.2vw, 3.25rem); }
+
+:focus-visible { outline: 3px solid var(--ambar); outline-offset: 3px; border-radius: 2px; }
+.ementa :focus-visible, .especialidades :focus-visible, .casa :focus-visible { outline-color: var(--tijolo); }
+
+.so-leitor {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip-path: inset(50%); white-space: nowrap;
+}
+.saltar {
+  position: absolute; left: 1rem; top: -4rem; z-index: 30;
+  padding: .6rem 1rem; background: var(--ambar); color: var(--casca); font-weight: 600;
+}
+.saltar:focus { top: .5rem; }
+
+.contentor { width: min(100% - 2.5rem, var(--largura)); margin-inline: auto; }
+.seccao { padding-block: clamp(4rem, 8vw, 7rem); }
+
+.pre-titulo {
+  margin: 0 0 .9rem;
+  color: var(--ambar);
+  font-size: .85rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.pre-titulo--escuro { color: var(--tijolo); }
+.lead { font-size: 1.2rem; line-height: 1.5; margin: 1.1rem 0 0; max-width: 38rem; }
+
+.botao {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 3.1rem; padding: .7rem 1.5rem;
+  border: 2px solid transparent; border-radius: 3px;
+  font-weight: 600; text-decoration: none;
+  transition: background-color .15s, color .15s, border-color .15s;
+}
+.botao--principal { background: var(--ambar); color: var(--casca); }
+.botao--principal:hover { background: #ffc66b; }
+.botao--linha { border-color: var(--claro-suave); color: var(--creme); }
+.botao--linha:hover { border-color: var(--ambar); color: var(--ambar); }
+
+/* Topo */
+.topo { position: sticky; top: 0; z-index: 20; background: var(--casca); color: var(--creme); }
+.topo__interior {
+  display: flex; align-items: center; gap: 2rem;
+  width: min(100% - 2.5rem, var(--largura)); min-height: 4.5rem; margin-inline: auto;
+}
+.topo__logo img { width: 7rem; }
+.topo__menu { display: none; }
+.topo__nav { display: flex; gap: 1.75rem; margin-left: auto; }
+.topo__nav a { padding-block: .4rem; font-size: .975rem; text-decoration: none; border-bottom: 2px solid transparent; }
+.topo__nav a:hover { border-color: var(--ambar); }
+.topo__telefone { color: var(--ambar); font-weight: 700; text-decoration: none; white-space: nowrap; }
+.topo__telefone:hover { text-decoration: underline; }
+
+/* Herói */
+.heroi {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  background: var(--casca); color: var(--creme);
+}
+.heroi__texto {
+  align-self: center;
+  padding: clamp(3rem, 6vw, 6rem) clamp(1.25rem, 4vw, 4rem) clamp(3rem, 6vw, 6rem) max(1.25rem, calc((100vw - var(--largura)) / 2));
+}
+.heroi h1 { font-size: clamp(2.75rem, 1.6rem + 3.6vw, 5rem); }
+.heroi h1 em { display: block; }
+.heroi__intro { margin: 1.5rem 0; max-width: 33rem; color: var(--claro-suave); font-size: 1.15rem; line-height: 1.55; }
+.heroi__foto { min-height: 34rem; position: relative; }
+.heroi__foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 62% 50%; }
+.heroi__acoes { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.75rem; }
+
+.estado { display: flex; align-items: center; gap: .6rem; margin: 0; font-weight: 600; }
+.estado__ponto { flex: none; width: .65rem; height: .65rem; border-radius: 50%; background: var(--claro-suave); }
+.estado--aberto .estado__ponto { background: #76d48c; }
+
+/* Especialidades */
+.especialidades__cabecalho {
+  display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: clamp(2rem, 5vw, 5rem); align-items: end; margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+.quadro {
+  padding: 1.6rem 1.75rem 1.75rem;
+  background: var(--ardosia); color: #f3f1ea;
+  border: 10px solid #7a5433; border-radius: 4px;
+}
+.quadro__titulo { margin-bottom: .75rem; color: var(--ambar); font-size: 1.5rem; font-style: italic; font-weight: 400; }
+.quadro li { padding-block: .5rem; font-family: var(--titulos); font-size: 1.05rem; line-height: 1.35; }
+.quadro li + li { border-top: 1px dashed #5d6668; }
+
+.pratos { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2.25rem 1.5rem; }
+.prato img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 3px; }
+.prato h3 { margin-top: .9rem; font-size: 1.3rem; }
+.prato p { margin: .3rem 0 0; color: var(--tinta-suave); font-size: .975rem; line-height: 1.4; }
+.prato--grande { grid-column: span 2; grid-row: span 2; }
+.prato--grande img { aspect-ratio: auto; height: auto; flex: 1; }
+.prato--grande h3 { font-size: 1.75rem; }
+
+/* Ementa */
+.ementa { background: var(--creme-2); }
+.ementa__separadores {
+  display: flex; flex-wrap: wrap; gap: .25rem 1.5rem;
+  margin-top: 2rem; border-bottom: 1px solid var(--linha-clara);
+}
+.ementa__separador {
+  padding: .7rem 0; margin-bottom: -1px; flex: none;
+  background: none; border: 0; border-bottom: 3px solid transparent;
+  color: var(--tinta-suave); font: 500 1rem var(--texto); cursor: pointer;
+}
+.ementa__separador:hover { color: var(--tinta); }
+.ementa__separador[aria-selected="true"] { border-color: var(--tijolo); color: var(--tijolo); font-weight: 700; }
+.ementa__painel { padding-top: 1.75rem; }
+.ementa__lista { columns: 2; column-gap: 4rem; }
+.ementa__lista li {
+  display: flex; justify-content: space-between; gap: 1rem;
+  padding-block: .7rem; border-bottom: 1px solid var(--linha-clara);
+  break-inside: avoid;
+}
+.ementa__nome { font-family: var(--titulos); font-size: 1.15rem; line-height: 1.3; }
+.ementa__regioes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 4rem; }
+.ementa__regioes .ementa__lista { columns: 1; }
+.ementa__regiao { margin: 0 0 .25rem; color: var(--tinta-suave); font: 600 .85rem var(--texto); letter-spacing: .08em; text-transform: uppercase; }
+.ementa__preco { flex: none; font-weight: 600; }
+.ementa__grupo { margin: 2rem 0 .5rem; color: var(--tijolo); font-size: 1.3rem; }
+.ementa__grupo:first-child { margin-top: 0; }
+
+.vinho-casa {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem 4rem; align-items: center;
+  margin-bottom: 2.25rem; padding: 1.5rem 1.75rem;
+  background: var(--casca); color: var(--creme); border-radius: 3px;
+}
+.vinho-casa__titulo { color: var(--ambar); font-size: 1.75rem; font-style: italic; font-weight: 400; }
+.vinho-casa p { margin: .35rem 0 0; color: var(--claro-suave); }
+.vinho-casa .ementa__lista { columns: 1; }
+.vinho-casa .ementa__lista li { border-color: var(--linha-escura); }
+.vinho-casa .ementa__lista li:last-child { border-bottom: 0; }
+
+/* Sommelier */
+.sommelier { background: var(--ardosia); color: #f3f1ea; }
+.sommelier .lead { color: #d5d6d0; }
+.sommelier__grelha { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(2rem, 5vw, 4rem); margin-top: 2.5rem; align-items: start; }
+.sommelier fieldset { margin: 0 0 2rem; padding: 0; border: 0; }
+.sommelier fieldset:last-child { margin-bottom: 0; }
+.sommelier legend { margin-bottom: .9rem; padding: 0; font-family: var(--titulos); font-size: 1.35rem; }
+.sommelier__opcoes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .6rem; }
+.sommelier__opcoes--linha { display: flex; flex-wrap: wrap; }
+
+.opcao { position: relative; display: block; cursor: pointer; }
+.opcao input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+.opcao__caixa {
+  display: block; height: 100%; padding: .65rem .9rem;
+  border: 1px solid #5d6668; border-radius: 3px;
+  font-weight: 600; line-height: 1.3;
+  transition: background-color .15s, border-color .15s, color .15s;
+}
+.opcao__caixa small { display: block; margin-top: .15rem; color: #bfc3bd; font-size: .85rem; font-weight: 400; }
+.opcao:hover .opcao__caixa { border-color: var(--ambar); }
+.opcao input:checked + .opcao__caixa { background: var(--ambar); border-color: var(--ambar); color: var(--casca); }
+.opcao input:checked + .opcao__caixa small { color: var(--casca); }
+.opcao input:focus-visible + .opcao__caixa { outline: 3px solid var(--ambar); outline-offset: 3px; }
+
+.sommelier__resposta { padding: 1.5rem 1.75rem; border: 10px solid #7a5433; border-radius: 4px; }
+.sommelier__vazio { margin: 0; font-family: var(--titulos); font-size: 1.2rem; font-style: italic; }
+.sommelier__titulo { color: var(--ambar); font-size: 1.5rem; font-style: italic; font-weight: 400; }
+.sommelier__sugestao { margin: .6rem 0 0; }
+.sommelier__vinhos { margin-top: .75rem; }
+.sommelier__vinhos li { display: flex; justify-content: space-between; gap: 1rem; padding-block: .6rem; border-top: 1px dashed #5d6668; }
+.sommelier__vinho { font-family: var(--titulos); font-size: 1.1rem; line-height: 1.3; }
+.sommelier__vinho small { display: block; color: #bfc3bd; font: 400 .875rem var(--texto); }
+.sommelier__ligacao { display: inline-block; margin-top: .75rem; color: var(--ambar); font-weight: 600; }
+.sommelier__nota { margin: 1rem 0 0; color: #bfc3bd; font-size: .875rem; line-height: 1.4; }
+.sommelier__ligacao + .sommelier__nota { margin-top: .75rem; }
+
+/* Reservas */
+.reservas { background: var(--casca-2); color: var(--creme); }
+.reservas__grelha { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(2rem, 5vw, 5rem); margin-top: 2.75rem; }
+.horarios-servico h3 { font-size: 1.6rem; padding-bottom: .8rem; border-bottom: 1px solid var(--linha-escura); }
+.horarios-servico small { margin-left: .4rem; color: var(--claro-suave); font: 400 .95rem var(--texto); }
+.horarios-servico dl { margin: 0; }
+.horarios-servico dl > div { display: grid; grid-template-columns: 6rem 1fr; gap: 1rem; padding-block: .9rem; border-bottom: 1px solid var(--linha-escura); }
+.horarios-servico dt { color: var(--ambar); font-weight: 600; }
+.horarios-servico dd { margin: 0; }
+
+.telefones { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 2.75rem; }
+.telefones a {
+  display: block; height: 100%; padding: 1.2rem 1.4rem;
+  background: var(--ambar); color: var(--casca); border-radius: 3px; text-decoration: none;
+  transition: background-color .15s;
+}
+.telefones a:hover { background: #ffc66b; }
+.telefones strong { display: block; font-family: var(--titulos); font-size: clamp(1.6rem, 1.2rem + 1vw, 2.1rem); font-weight: 600; line-height: 1.2; white-space: nowrap; }
+.telefones span { font-size: .875rem; }
+.reservas__grupos { margin: 2rem 0 0; font-size: 1.1rem; }
+.reservas__grupos strong { color: var(--ambar); }
+
+/* A casa */
+.casa__historia { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(2rem, 6vw, 6rem); align-items: center; }
+.casa__texto > p:not(.lead):not(.pre-titulo) { max-width: 38rem; margin: 1rem 0 0; }
+.casa__foto { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 3px; }
+
+.esplanada { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(2rem, 5vw, 4rem); align-items: center; margin-top: clamp(4rem, 8vw, 6.5rem); }
+.esplanada__fotos { display: grid; grid-template-columns: 3fr 2fr; gap: .75rem; }
+.esplanada__fotos img { width: 100%; height: 100%; min-height: 20rem; object-fit: cover; border-radius: 3px; }
+.esplanada__texto h3 { font-size: clamp(1.75rem, 1.4rem + 1.2vw, 2.4rem); }
+.esplanada__texto p { margin: 1rem 0 0; }
+.etiquetas { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.4rem; }
+.etiquetas li { padding: .25rem .75rem; border: 1px solid var(--linha-clara); border-radius: 99px; font-size: .925rem; }
+
+/* Avaliações */
+.avaliacoes { padding-block: clamp(2.5rem, 5vw, 3.5rem); background: var(--creme-2); }
+.avaliacoes__interior { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem 3rem; }
+.avaliacoes h2 { font-size: clamp(1.75rem, 1.4rem + 1.2vw, 2.4rem); }
+.avaliacoes p { margin: .5rem 0 0; }
+.avaliacoes__acoes { display: flex; flex-wrap: wrap; gap: .75rem; }
+.avaliacoes :focus-visible { outline-color: var(--tijolo); }
+.botao--escuro { background: var(--casca); color: var(--creme); }
+.botao--escuro:hover { background: var(--tijolo); }
+
+/* Visite-nos */
+.visite { background: var(--casca); color: var(--creme); }
+.visite__grelha { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2.5rem, 6vw, 6rem); }
+.visite address { margin-top: .75rem; font-family: var(--titulos); font-size: 1.35rem; font-style: normal; line-height: 1.35; }
+.visite p { margin: 1rem 0 0; }
+.visite__acoes { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; }
+.visite .visite__nota { margin-top: .5rem; color: var(--claro-suave); font-size: .875rem; }
+.horario h3 { font-size: 1.6rem; margin-bottom: .75rem; }
+.horario table { width: 100%; border-collapse: collapse; }
+.horario th, .horario td { padding: .8rem 0; border-bottom: 1px solid var(--linha-escura); font-weight: 400; text-align: left; }
+.horario td { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.horario .hoje th, .horario .hoje td { color: var(--ambar); font-weight: 600; }
+.hoje__marca { margin-left: .5rem; padding: .05rem .45rem; background: var(--ambar); color: var(--casca); border-radius: 2px; font-size: .75rem; font-weight: 700; }
+
+/* Rodapé */
+.rodape { padding-block: 3.5rem 2rem; background: #140d0a; color: var(--claro-suave); }
+.rodape__grelha { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; }
+.rodape__grelha > img { width: 9rem; }
+.rodape h2 { margin-bottom: .6rem; color: var(--creme); font: 600 .95rem var(--texto); }
+.rodape li a { display: inline-block; padding-block: .2rem; }
+.rodape a:hover { color: var(--ambar); }
+.rodape__legal { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--linha-escura); font-size: .875rem; }
+
+.barra-movel { display: none; }
+
+@media (max-width: 68rem) {
+  .topo__menu {
+    display: block; order: 2; padding: .5rem .9rem;
+    background: none; border: 1px solid var(--linha-escura); border-radius: 3px;
+    color: var(--creme); font: 600 .95rem var(--texto); cursor: pointer;
+  }
+  .topo__telefone { order: 1; margin-left: auto; }
+  .topo__interior { gap: 1rem; }
+  .topo__nav {
+    display: none; position: absolute; top: 100%; left: 0; right: 0; margin: 0;
+    flex-direction: column; gap: 0; padding: .5rem 1.25rem 1rem;
+    background: var(--casca); border-top: 1px solid var(--linha-escura);
+  }
+  .topo__nav.aberta { display: flex; }
+  .topo__nav a { padding-block: .8rem; }
+  .pratos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .prato--grande { grid-column: span 1; grid-row: auto; }
+  .prato--grande img { aspect-ratio: 1; }
+  .prato--grande h3 { font-size: 1.3rem; }
+}
+
+@media (max-width: 52rem) {
+  body { padding-bottom: 3.5rem; font-size: 1rem; }
+  .heroi { grid-template-columns: 1fr; }
+  .heroi__foto { order: -1; min-height: 0; aspect-ratio: 16 / 10; }
+  .heroi__texto { padding: 2.25rem 1.25rem 3rem; }
+  .especialidades__cabecalho, .reservas__grelha, .casa__historia, .esplanada, .visite__grelha, .sommelier__grelha { grid-template-columns: minmax(0, 1fr); }
+  .sommelier__resposta { padding: 1.25rem; scroll-margin-block: 5.5rem; }
+  .pratos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.75rem 1rem; }
+  .prato--grande { grid-column: span 2; }
+  .prato--grande img { aspect-ratio: 4 / 3; }
+  .prato h3, .prato--grande h3 { font-size: 1.1rem; }
+  .prato p { font-size: .9rem; }
+
+  /* Separadores em linha, para não ocuparem o ecrã inteiro no telemóvel */
+  .ementa__separadores { flex-wrap: nowrap; overflow-x: auto; margin-inline: -1.25rem; padding-inline: 1.25rem; scrollbar-width: none; }
+  .ementa__lista { columns: 1; }
+  .ementa__regioes, .vinho-casa { grid-template-columns: minmax(0, 1fr); }
+  .vinho-casa { padding: 1.25rem; }
+
+  .telefones { grid-template-columns: minmax(0, 1fr); }
+  .casa__foto { aspect-ratio: 4 / 3; }
+  .esplanada__fotos { grid-template-columns: minmax(0, 1fr); }
+  .esplanada__fotos img { min-height: 0; aspect-ratio: 4 / 3; }
+  .rodape__grelha { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rodape__grelha > img { grid-column: 1 / -1; }
+
+  .barra-movel {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    position: fixed; inset: auto 0 0; z-index: 20;
+    background: var(--casca); border-top: 1px solid var(--linha-escura);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .barra-movel a {
+    display: flex; align-items: center; justify-content: center; min-height: 3.5rem;
+    color: var(--creme); font-weight: 600; text-decoration: none;
+  }
+  .barra-movel a:first-child { background: var(--ambar); color: var(--casca); }
+}
+
+@media (max-width: 26rem) {
+  .topo__telefone { display: none; }
+  .topo__menu { margin-left: auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Restaurante Os Compadres | Cozinha portuguesa no Lumiar, Lisboa</title>
+  <meta name="description" content="Cozinha tradicional portuguesa, feita na hora, com sala e esplanada na Ameixoeira, Lumiar. Reservas e take-away por telefone.">
+  <!-- Protótipo: retirar esta linha quando o site for publicado oficialmente -->
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#1d1410">
+  <link rel="preload" href="assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Restaurante Os Compadres",
+    "servesCuisine": "Portuguesa",
+    "telephone": "+351217545065",
+    "url": "https://www.restauranteoscompadres.net/",
+    "acceptsReservations": "https://schema.org/True",
+    "paymentAccepted": "Dinheiro, Multibanco, Cartão de crédito",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Estrada do Desvio, 28",
+      "addressLocality": "Lisboa",
+      "postalCode": "1750-099",
+      "addressCountry": "PT"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 38.780346, "longitude": -9.163229 },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "12:00", "closes": "15:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "18:30", "closes": "22:00" }
+    ]
+  }
+  </script>
+  <script src="js/conteudo.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="saltar" href="#conteudo">Saltar para o conteúdo</a>
+
+  <header class="topo">
+    <div class="topo__interior">
+      <a class="topo__logo" href="#inicio" aria-label="Os Compadres, início">
+        <img src="assets/img/logo.png" alt="" width="268" height="135">
+      </a>
+      <button class="topo__menu" type="button" aria-expanded="false" aria-controls="navegacao">Menu</button>
+      <nav id="navegacao" class="topo__nav" aria-label="Principal">
+        <a href="#especialidades">Especialidades</a>
+        <a href="#ementa">Ementa</a>
+        <a href="#sommelier">Que vinho escolher?</a>
+        <a href="#reservas">Reservas e take-away</a>
+        <a href="#casa">A casa</a>
+        <a href="#visite">Visite-nos</a>
+      </nav>
+      <a class="topo__telefone" href="tel:+351963754159">963 754 159</a>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="heroi" id="inicio">
+      <div class="heroi__texto">
+        <p class="pre-titulo">Ameixoeira · Lumiar · Lisboa</p>
+        <h1>Cozinha portuguesa, <em>feita na hora.</em></h1>
+        <p class="heroi__intro">Uma casa de família que nasceu na antiga Feira Popular de Lisboa e continua a servir bifes, petiscos, marisco e peixe fresco às portas do Lumiar.</p>
+        <p class="estado" data-estado><span class="estado__ponto" aria-hidden="true"></span><span data-estado-texto>Quarta a domingo, 12:00–15:00 e 18:30–22:00</span></p>
+        <div class="heroi__acoes">
+          <a class="botao botao--principal" href="#reservas">Reservar por telefone</a>
+          <a class="botao botao--linha" href="#ementa">Ver a ementa</a>
+        </div>
+      </div>
+      <div class="heroi__foto">
+        <img src="assets/img/hero-1261.jpg" width="1920" height="735" alt="Naco de carne selado, com grelos salteados e ovo estrelado, servido em prato escuro">
+      </div>
+    </section>
+
+    <section class="seccao especialidades" id="especialidades">
+      <div class="contentor">
+        <div class="especialidades__cabecalho">
+          <div>
+            <p class="pre-titulo pre-titulo--escuro">Especialidades</p>
+            <h2>O que os clientes voltam para pedir</h2>
+            <p class="lead">Os bifes, o piano, o cozido à portuguesa e a boa garrafeira são os mais recomendados pelos nossos clientes. Há também pratos do dia e peixe fresco todos os dias.</p>
+          </div>
+          <aside class="quadro" aria-labelledby="quadro-titulo">
+            <h3 id="quadro-titulo" class="quadro__titulo">Novidades da casa</h3>
+            <ul data-novidades></ul>
+          </aside>
+        </div>
+
+        <ul class="pratos">
+          <li class="prato prato--grande">
+            <img src="assets/img/esp-3.jpg" width="800" height="800" loading="lazy" alt="Dois tomahawks a grelhar sobre a brasa">
+            <h3>Tomahawk</h3>
+            <p>Com batata frita e arroz de feijão, para 3 pessoas</p>
+          </li>
+          <li class="prato">
+            <img src="assets/img/esp-1.jpg" width="800" height="800" loading="lazy" alt="Naco de vazia com gambas em travessa de madeira">
+            <h3>Naco da vazia com gambas</h3>
+            <p>Selado e servido com gambas</p>
+          </li>
+          <li class="prato">
+            <img src="assets/img/bacalhau.jpg" width="800" height="800" loading="lazy" alt="Bacalhau assado com batata a murro, azeitonas e azeite">
+            <h3>Bacalhau à Casa</h3>
+            <p>Grelos, batata a murro, beterraba e azeite quente, para 2 pessoas</p>
+          </li>
+          <li class="prato">
+            <img src="assets/img/esp-2.jpg" width="800" height="800" loading="lazy" alt="Caril de gambas com arroz basmati">
+            <h3>Caril de gambas picante</h3>
+            <p>Com arroz basmati e frutos secos</p>
+          </li>
+          <li class="prato">
+            <img src="assets/img/bife-26.jpg" width="640" height="480" loading="lazy" alt="Bife com ovo estrelado em travessa de inox">
+            <h3>Bifes variados</h3>
+            <p>À Compadres, à pimenta, à café, à Portugal e outros</p>
+          </li>
+          <li class="prato">
+            <img src="assets/img/marisco-1.jpg" width="800" height="800" loading="lazy" alt="Amêijoas à Bulhão Pato em prato escuro">
+            <h3>Marisco</h3>
+            <p>Cadelinhas à Bulhão Pato, gambas à casa e canivetes</p>
+          </li>
+          <li class="prato">
+            <img src="assets/img/petisco-2.jpg" width="800" height="800" loading="lazy" alt="Ovos estrelados sobre batata frita e presunto">
+            <h3>Ovos rotos</h3>
+            <p>Com plumilha de presunto</p>
+          </li>
+          <li class="prato">
+            <img src="assets/img/petisco-1.jpg" width="800" height="800" loading="lazy" alt="Enchidos salteados com cogumelos em tábua de madeira">
+            <h3>Enchidos salteados</h3>
+            <p>Um petisco para partilhar</p>
+          </li>
+          <li class="prato">
+            <img src="assets/img/sobremesa-2.jpg" width="640" height="480" loading="lazy" alt="Tarte de amêndoa inteira">
+            <h3>Doces caseiros</h3>
+            <p>Feitos por nós, como a tarte de amêndoa</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="seccao ementa" id="ementa">
+      <div class="contentor">
+        <p class="pre-titulo pre-titulo--escuro">Ementa</p>
+        <h2>Da entrada à sobremesa</h2>
+        <noscript><p class="lead">Para consultar a ementa, ligue-nos para o 963 754 159 (chamada para rede móvel nacional).</p></noscript>
+        <div class="ementa__separadores" role="tablist" aria-label="Categorias da ementa" data-separadores></div>
+        <div data-paineis></div>
+      </div>
+    </section>
+
+    <section class="seccao sommelier" id="sommelier">
+      <div class="contentor">
+        <p class="pre-titulo">O sommelier da casa</p>
+        <h2>Que vinho escolher?</h2>
+        <p class="lead">Diga-nos o que vai comer e sugerimos um vinho da nossa carta.</p>
+        <noscript><p>Peça ajuda à nossa equipa para escolher o vinho.</p></noscript>
+        <div class="sommelier__grelha">
+          <form>
+            <fieldset>
+              <legend>O que vai comer?</legend>
+              <div class="sommelier__opcoes" data-refeicoes></div>
+            </fieldset>
+            <fieldset>
+              <legend>Tem alguma preferência?</legend>
+              <div class="sommelier__opcoes sommelier__opcoes--linha" data-preferencias></div>
+            </fieldset>
+          </form>
+          <div class="sommelier__resposta">
+            <div aria-live="polite" data-resultado>
+              <p class="sommelier__vazio">Escolha uma refeição para ver a nossa sugestão.</p>
+            </div>
+            <p class="sommelier__nota">Sugestões orientativas. A nossa equipa pode ajudá-lo a escolher à mesa.</p>
+            <a class="sommelier__ligacao" href="#ementa" data-abrir-vinhos>Ver a carta de vinhos completa</a>
+            <p class="sommelier__nota">Seja responsável. Beba com moderação.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccao reservas" id="reservas">
+      <div class="contentor">
+        <p class="pre-titulo">Reservas e take-away</p>
+        <h2>É só ligar. <em>Tratamos do resto.</em></h2>
+        <div class="reservas__grelha">
+          <div class="horarios-servico">
+            <h3>Reservas <small>só por telefone</small></h3>
+            <dl>
+              <div><dt>Almoços</dt><dd>reserve até às 13h00</dd></div>
+              <div><dt>Jantares</dt><dd>reserve até às 20h00</dd></div>
+            </dl>
+          </div>
+          <div class="horarios-servico">
+            <h3>Take-away <small>encomendas por telefone</small></h3>
+            <dl>
+              <div><dt>Almoço</dt><dd>encomende das 10h00 às 12h00<br>e venha buscar até às 13h00</dd></div>
+              <div><dt>Jantar</dt><dd>encomende das 18h00 às 19h00<br>e venha buscar até às 20h00</dd></div>
+            </dl>
+          </div>
+        </div>
+        <ul class="telefones">
+          <li><a href="tel:+351963754159"><strong>963 754 159</strong><span>chamada para rede móvel nacional</span></a></li>
+          <li><a href="tel:+351926002649"><strong>926 002 649</strong><span>chamada para rede móvel nacional</span></a></li>
+          <li><a href="tel:+351217545065"><strong>217 545 065</strong><span>chamada para rede fixa nacional</span></a></li>
+        </ul>
+        <p class="reservas__grupos"><strong>Vem em grupo?</strong> Temos menus para grupos, a partir de 15 pessoas. Ligue-nos para saber mais.</p>
+      </div>
+    </section>
+
+    <section class="seccao casa" id="casa">
+      <div class="contentor casa__historia">
+        <div class="casa__texto">
+          <p class="pre-titulo pre-titulo--escuro">A casa</p>
+          <h2>Da Feira Popular para o Lumiar</h2>
+          <p class="lead">Os Compadres são uma empresa familiar com origem numa casa mítica da antiga Feira Popular de Lisboa: o Imperador dos Caracóis.</p>
+          <p>Quando a Feira fechou, a família abriu uma nova casa às portas do Lumiar e a clientela veio atrás. O espírito manteve-se: todos os pratos são confecionados na hora e a simpatia continua a ser aquilo de que os clientes mais falam.</p>
+          <p>A sala é moderna e espaçosa, ideal para um almoço de família ou um jantar de grupo. Para acompanhar, a <a href="#ementa" data-abrir-vinhos>carta de vinhos</a> reúne tintos, brancos, rosés e espumantes das regiões mais consagradas, e os doces são feitos por nós.</p>
+        </div>
+        <img class="casa__foto" src="assets/img/rest-10.jpg" width="450" height="350" loading="lazy" alt="Sala de refeições com mesas postas e uma parede inteira de garrafeira">
+      </div>
+
+      <div class="contentor esplanada">
+        <div class="esplanada__fotos">
+          <img src="assets/img/esplanada-4.jpg" width="1200" height="900" loading="lazy" alt="Esplanada coberta, de dia, com mesas postas e grandes janelas para as árvores">
+          <img src="assets/img/esplanada-1.jpg" width="1200" height="900" loading="lazy" alt="Janela da esplanada ao anoitecer, com plantas e um pequeno quadro a anunciar amêijoa">
+        </div>
+        <div class="esplanada__texto">
+          <h3>A esplanada é para ficar</h3>
+          <p>Comece o fim de tarde com um prato de caracóis ou marisco fresco e, quem sabe, prolongue-o noite fora. Os Santos Populares e as patuscadas são aqui bem tratados.</p>
+          <ul class="etiquetas">
+            <li>Esplanada</li>
+            <li>Bar completo</li>
+            <li>Sport TV</li>
+            <li>Wi-Fi</li>
+            <li>Take-away</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="avaliacoes" id="avaliacoes">
+      <div class="contentor avaliacoes__interior">
+        <div>
+          <h2>Já nos visitou?</h2>
+          <p>Leia o que dizem os nossos clientes ou deixe a sua opinião.</p>
+        </div>
+        <div class="avaliacoes__acoes">
+          <a class="botao botao--escuro" href="https://www.google.com/search?hl=pt-PT&amp;gl=pt&amp;q=Os+Compadres,+Est+do+Desv.+28,+1750-099+Lisboa&amp;ludocid=6583333854940724621&amp;lsig=AB86z5X70cLenALAL0iGnnD36FtQ#lrd=0xd193296c5eeb169:0x5b5cb342d58b7d8d,1" target="_blank" rel="noopener noreferrer">Avaliações no Google</a>
+          <a class="botao botao--escuro" href="https://www.tripadvisor.com.br/Restaurant_Review-g189158-d7626419-Reviews-Restaurante_Os_Compadres-Lisbon_Lisbon_District_Central_Portugal.html" target="_blank" rel="noopener noreferrer">Avaliações no Tripadvisor</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccao visite" id="visite">
+      <div class="contentor visite__grelha">
+        <div>
+          <p class="pre-titulo">Visite-nos</p>
+          <h2>Estrada do Desvio, 28</h2>
+          <address>Ameixoeira, Lumiar<br>1750-099 Lisboa</address>
+          <p>Os acessos são fáceis e há estacionamento nas imediações.</p>
+          <div class="visite__acoes">
+            <a class="botao botao--principal" href="https://www.google.com/maps/search/?api=1&amp;query=38.780346,-9.163229" target="_blank" rel="noopener noreferrer">Como chegar</a>
+            <a class="botao botao--linha" href="tel:+351217545065">217 545 065</a>
+          </div>
+          <p class="visite__nota">Chamada para rede fixa nacional.</p>
+          <p class="visite__pagamento"><strong>Pagamento:</strong> dinheiro, Multibanco e cartão de crédito.</p>
+        </div>
+        <div class="horario">
+          <h3>Horário</h3>
+          <table>
+            <caption class="so-leitor">Horário de funcionamento por dia da semana</caption>
+            <tbody data-horario></tbody>
+          </table>
+          <noscript><p>Quarta a domingo: 12:00–15:00 e 18:30–22:00. Encerrado à segunda e à terça-feira.</p></noscript>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="contentor rodape__grelha">
+      <img src="assets/img/logo.png" width="268" height="135" loading="lazy" alt="Os Compadres, Cozinha Portuguesa">
+      <div>
+        <h2>Siga-nos</h2>
+        <ul>
+          <li><a href="https://www.facebook.com/Restaurante-Os-Compadres-188728681642311/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+          <li><a href="https://www.instagram.com/restauranteoscompadres/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Avaliações</h2>
+        <ul>
+          <li><a href="https://www.google.com/search?hl=pt-PT&amp;gl=pt&amp;q=Os+Compadres,+Est+do+Desv.+28,+1750-099+Lisboa&amp;ludocid=6583333854940724621&amp;lsig=AB86z5X70cLenALAL0iGnnD36FtQ#lrd=0xd193296c5eeb169:0x5b5cb342d58b7d8d,1" target="_blank" rel="noopener noreferrer">Google</a></li>
+          <li><a href="https://www.tripadvisor.com.br/Restaurant_Review-g189158-d7626419-Reviews-Restaurante_Os_Compadres-Lisbon_Lisbon_District_Central_Portugal.html" target="_blank" rel="noopener noreferrer">Tripadvisor</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Informação</h2>
+        <ul>
+          <li><a href="https://www.livroreclamacoes.pt/inicio" target="_blank" rel="noopener noreferrer">Livro de Reclamações</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="rodape__legal contentor">© <span data-ano>2026</span> Restaurante Os Compadres</p>
+  </footer>
+
+  <nav class="barra-movel" aria-label="Ações rápidas">
+    <a href="tel:+351963754159">Ligar</a>
+    <a href="#ementa">Ementa</a>
+    <a href="https://www.google.com/maps/search/?api=1&amp;query=38.780346,-9.163229" target="_blank" rel="noopener noreferrer">Como chegar</a>
+  </nav>
+</body>
+</html>
