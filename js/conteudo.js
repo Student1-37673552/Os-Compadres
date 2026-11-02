@@ -18,6 +18,25 @@ window.COMPADRES = {
     "Arroz de gambas com grão"
   ],
 
+  // Galeria. A primeira fotografia aparece maior e a segunda deve ser vertical.
+  galeria: [
+    { src: "assets/img/galeria-esplanada.jpg", largura: 1200, altura: 900, legenda: "Esplanada", alt: "Esplanada coberta à noite, com mesas postas e janelas amplas" },
+    { src: "assets/img/galeria-entrada.jpg", largura: 1200, altura: 1442, legenda: "Vitrina", alt: "Vitrina refrigerada à entrada, por baixo da tabuleta do restaurante" },
+    { src: "assets/img/galeria-sala-1.jpg", largura: 450, altura: 350, legenda: "Sala", alt: "Mesas postas com toalhas brancas, com a garrafeira ao fundo" },
+    { src: "assets/img/galeria-sala-2.jpg", largura: 450, altura: 350, legenda: "Sala", alt: "Vista geral da sala, com várias mesas postas" },
+    { src: "assets/img/galeria-sala-3.jpg", largura: 450, altura: 350, legenda: "Sala", alt: "Sala com candeeiros suspensos e grandes janelas" }
+  ],
+
+  // Grupos. Sem capacidade, essa linha não aparece; sem menus, a lista de menus também não.
+  // ATENÇÃO: capacidade e menus de exemplo, a substituir antes de publicar.
+  grupos: {
+    capacidade: "00 pessoas",
+    menus: [
+      { nome: "Menu de exemplo A", preco: "00,00 € por pessoa", pratos: ["Entrada de exemplo", "Prato de exemplo", "Sobremesa de exemplo", "Bebidas de exemplo"] },
+      { nome: "Menu de exemplo B", preco: "00,00 € por pessoa", pratos: ["Entrada de exemplo", "Prato de exemplo", "Sobremesa de exemplo", "Bebidas de exemplo"] }
+    ]
+  },
+
   // Destaque no topo da carta de vinhos. Sem opções, não aparece; o preço é opcional, por exemplo preco: "00,00 €".
   vinhoDaCasa: {
     descricao: "A escolha simples para acompanhar a refeição.",

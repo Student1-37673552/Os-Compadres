@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Restaurante Os Compadres | Cuisine portugaise à Lumiar, Lisbonne</title>
+  <meta name="description" content="Cuisine portugaise traditionnelle, préparée à la minute, avec salle et terrasse à Ameixoeira, Lumiar. Réservations et plats à emporter par téléphone.">
+  <!-- Protótipo: retirar esta linha quando o site for publicado oficialmente -->
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#1d1410">
+  <link rel="alternate" hreflang="pt-PT" href="https://www.restauranteoscompadres.net/">
+  <link rel="alternate" hreflang="en" href="https://www.restauranteoscompadres.net/en/">
+  <link rel="alternate" hreflang="fr" href="https://www.restauranteoscompadres.net/fr/">
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="../js/conteudo.js" defer></script>
+  <script src="../js/traducao.fr.js" defer></script>
+  <script src="../js/main.js" defer></script>
+</head>
+<body>
+  <a class="saltar" href="#contenu">Aller au contenu</a>
+
+  <header class="topo">
+    <div class="topo__interior">
+      <a class="topo__logo" href="#haut" aria-label="Os Compadres, accueil">
+        <img src="../assets/img/logo.png" alt="" width="268" height="135">
+      </a>
+      <button class="topo__menu" type="button" aria-expanded="false" aria-controls="navegacao">Menu</button>
+      <nav id="navegacao" class="topo__nav" aria-label="Navigation principale">
+        <a href="#ementa">Carte et vins</a>
+        <a href="#reservas">Réservations et à emporter</a>
+        <a href="#visite">Nous trouver</a>
+      </nav>
+      <a class="topo__telefone" href="tel:+351963754159">+351 963 754 159</a>
+      <ul class="idiomas" aria-label="Langue">
+        <li><a href="../index.html" lang="pt-PT">PT</a></li>
+        <li><a href="../en/index.html" lang="en">EN</a></li>
+        <li><a href="index.html" lang="fr" aria-current="page">FR</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <section class="heroi" id="haut">
+      <div class="heroi__texto">
+        <p class="pre-titulo">Ameixoeira · Lumiar · Lisbonne</p>
+        <h1>Cuisine portugaise, <em>préparée à la minute.</em></h1>
+        <p class="heroi__intro">Un restaurant familial né à l'ancienne Feira Popular de Lisbonne, qui sert viandes, petites assiettes, fruits de mer et poisson frais aux portes de Lumiar.</p>
+        <p class="estado" data-estado><span class="estado__ponto" aria-hidden="true"></span><span data-estado-texto>Du mercredi au dimanche, 12:00–15:00 et 18:30–22:00</span></p>
+        <div class="heroi__acoes">
+          <a class="botao botao--principal" href="#reservas">Réserver par téléphone</a>
+          <a class="botao botao--linha" href="#ementa">Voir la carte</a>
+        </div>
+      </div>
+      <div class="heroi__foto">
+        <img src="../assets/img/hero-1261.jpg" width="1920" height="735" alt="Bœuf saisi, légumes verts sautés et œuf au plat dans une assiette sombre">
+      </div>
+    </section>
+
+    <section class="seccao ementa" id="ementa">
+      <div class="contentor">
+        <p class="pre-titulo pre-titulo--escuro">La carte</p>
+        <h2>De l'entrée au dessert</h2>
+        <noscript><p class="lead">Pour connaître la carte, appelez le +351 963 754 159 (appel vers un réseau mobile national).</p></noscript>
+        <div class="ementa__separadores" role="tablist" aria-label="Catégories de la carte" data-separadores></div>
+        <div data-paineis></div>
+      </div>
+    </section>
+
+    <section class="seccao reservas" id="reservas">
+      <div class="contentor">
+        <p class="pre-titulo">Réservations et plats à emporter</p>
+        <h2>Il suffit de nous appeler.</h2>
+        <div class="reservas__grelha">
+          <div class="horarios-servico">
+            <h3>Réservations <small>par téléphone uniquement</small></h3>
+            <dl>
+              <div><dt>Déjeuner</dt><dd>réservez avant 13h00</dd></div>
+              <div><dt>Dîner</dt><dd>réservez avant 20h00</dd></div>
+            </dl>
+          </div>
+          <div class="horarios-servico">
+            <h3>À emporter <small>commandes par téléphone</small></h3>
+            <dl>
+              <div><dt>Déjeuner</dt><dd>commandez de 10h00 à 12h00<br>et retirez avant 13h00</dd></div>
+              <div><dt>Dîner</dt><dd>commandez de 18h00 à 19h00<br>et retirez avant 20h00</dd></div>
+            </dl>
+          </div>
+        </div>
+        <ul class="telefones">
+          <li><a href="tel:+351963754159"><strong>963 754 159</strong><span>appel vers un réseau mobile national</span></a></li>
+          <li><a href="tel:+351926002649"><strong>926 002 649</strong><span>appel vers un réseau mobile national</span></a></li>
+          <li><a href="tel:+351217545065"><strong>217 545 065</strong><span>appel vers un réseau fixe national</span></a></li>
+        </ul>
+        <p class="reservas__grupos"><strong>Vous venez en groupe ?</strong> Nous proposons des menus à partir de 15 personnes. Appelez-nous pour en savoir plus.</p>
+      </div>
+    </section>
+
+    <section class="seccao visite" id="visite">
+      <div class="contentor visite__grelha">
+        <div>
+          <p class="pre-titulo">Nous trouver</p>
+          <h2>Estrada do Desvio, 28</h2>
+          <address>Ameixoeira, Lumiar<br>1750-099 Lisbonne</address>
+          <p>Accès facile et stationnement à proximité.</p>
+          <div class="visite__acoes">
+            <a class="botao botao--principal" href="https://www.google.com/maps/search/?api=1&amp;query=38.780346,-9.163229" target="_blank" rel="noopener noreferrer">Itinéraire</a>
+            <a class="botao botao--linha" href="tel:+351217545065">217 545 065</a>
+          </div>
+          <p class="visite__nota">Appel vers un réseau fixe national.</p>
+          <p class="visite__pagamento"><strong>Paiement :</strong> espèces, Multibanco et carte de crédit.</p>
+        </div>
+        <div class="horario">
+          <h3>Horaires</h3>
+          <table>
+            <caption class="so-leitor">Horaires d'ouverture par jour de la semaine</caption>
+            <tbody data-horario></tbody>
+          </table>
+          <noscript><p>Du mercredi au dimanche : 12:00–15:00 et 18:30–22:00. Fermé le lundi et le mardi.</p></noscript>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="contentor rodape__grelha">
+      <img src="../assets/img/logo.png" width="268" height="135" loading="lazy" alt="Os Compadres, cuisine portugaise">
+      <div>
+        <h2>Suivez-nous</h2>
+        <ul>
+          <li><a href="https://www.facebook.com/Restaurante-Os-Compadres-188728681642311/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+          <li><a href="https://www.instagram.com/restauranteoscompadres/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Avis</h2>
+        <ul>
+          <li><a href="https://www.google.com/search?hl=pt-PT&amp;gl=pt&amp;q=Os+Compadres,+Est+do+Desv.+28,+1750-099+Lisboa&amp;ludocid=6583333854940724621&amp;lsig=AB86z5X70cLenALAL0iGnnD36FtQ#lrd=0xd193296c5eeb169:0x5b5cb342d58b7d8d,1" target="_blank" rel="noopener noreferrer">Google</a></li>
+          <li><a href="https://www.tripadvisor.com.br/Restaurant_Review-g189158-d7626419-Reviews-Restaurante_Os_Compadres-Lisbon_Lisbon_District_Central_Portugal.html" target="_blank" rel="noopener noreferrer">Tripadvisor</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Informations</h2>
+        <ul>
+          <li><a href="https://www.livroreclamacoes.pt/inicio" target="_blank" rel="noopener noreferrer">Livre de réclamations (Livro de Reclamações)</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="rodape__legal contentor">© <span data-ano>2026</span> Restaurante Os Compadres</p>
+  </footer>
+
+  <nav class="barra-movel" aria-label="Actions rapides">
+    <a href="tel:+351963754159">Appeler</a>
+    <a href="#ementa">Carte</a>
+    <a href="https://www.google.com/maps/search/?api=1&amp;query=38.780346,-9.163229" target="_blank" rel="noopener noreferrer">Itinéraire</a>
+  </nav>
+</body>
+</html>

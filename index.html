@@ -8,6 +8,9 @@
   <!-- Protótipo: retirar esta linha quando o site for publicado oficialmente -->
   <meta name="robots" content="noindex">
   <meta name="theme-color" content="#1d1410">
+  <link rel="alternate" hreflang="pt-PT" href="https://www.restauranteoscompadres.net/">
+  <link rel="alternate" hreflang="en" href="https://www.restauranteoscompadres.net/en/">
+  <link rel="alternate" hreflang="fr" href="https://www.restauranteoscompadres.net/fr/">
   <link rel="preload" href="assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
   <script type="application/ld+json">
@@ -50,11 +53,17 @@
         <a href="#especialidades">Especialidades</a>
         <a href="#ementa">Ementa</a>
         <a href="#sommelier">Que vinho escolher?</a>
-        <a href="#reservas">Reservas e take-away</a>
+        <a href="#reservas">Reservas</a>
+        <a href="#grupos">Grupos</a>
         <a href="#casa">A casa</a>
         <a href="#visite">Visite-nos</a>
       </nav>
       <a class="topo__telefone" href="tel:+351963754159">963 754 159</a>
+      <ul class="idiomas" aria-label="Idioma">
+        <li><a href="index.html" lang="pt-PT" aria-current="page">PT</a></li>
+        <li><a href="en/index.html" lang="en">EN</a></li>
+        <li><a href="fr/index.html" lang="fr">FR</a></li>
+      </ul>
     </div>
   </header>
 
@@ -203,7 +212,27 @@
           <li><a href="tel:+351926002649"><strong>926 002 649</strong><span>chamada para rede móvel nacional</span></a></li>
           <li><a href="tel:+351217545065"><strong>217 545 065</strong><span>chamada para rede fixa nacional</span></a></li>
         </ul>
-        <p class="reservas__grupos"><strong>Vem em grupo?</strong> Temos menus para grupos, a partir de 15 pessoas. Ligue-nos para saber mais.</p>
+        <p class="reservas__grupos"><strong>Vem em grupo?</strong> Temos menus a partir de 15 pessoas. <a href="#grupos">Ver os menus para grupos</a></p>
+      </div>
+    </section>
+
+    <section class="seccao grupos" id="grupos">
+      <div class="contentor grupos__grelha">
+        <div>
+          <p class="pre-titulo pre-titulo--escuro">Grupos</p>
+          <h2>Uma mesa grande para a sua família ou empresa</h2>
+          <p class="lead">A sala é ideal para almoços de família e jantares de grupo. Ligue-nos e ajudamos a preparar tudo.</p>
+          <dl class="grupos__factos">
+            <div><dt>Mínimo</dt><dd>15 pessoas</dd></div>
+            <div data-grupos-capacidade><dt>Capacidade</dt><dd></dd></div>
+          </dl>
+          <a class="botao botao--escuro" href="tel:+351963754159">Ligar: 963 754 159</a>
+          <p class="grupos__nota">Chamada para rede móvel nacional.</p>
+        </div>
+        <div>
+          <img class="grupos__foto" src="assets/img/grupos.jpg" width="1200" height="900" loading="lazy" alt="Mesas longas postas para um grupo">
+          <ul class="grupos__menus" data-grupos-menus></ul>
+        </div>
       </div>
     </section>
 
@@ -235,6 +264,11 @@
             <li>Take-away</li>
           </ul>
         </div>
+      </div>
+
+      <div class="contentor galeria" id="galeria">
+        <h3>Veja como é cá dentro</h3>
+        <div class="galeria__grelha" data-galeria></div>
       </div>
     </section>
 

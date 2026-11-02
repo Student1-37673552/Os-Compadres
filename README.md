@@ -12,10 +12,12 @@ Abrir o `index.html` no navegador.
 
 | Caminho | Conteúdo |
 |---|---|
-| `index.html` | Estrutura da página |
+| `index.html` | Página em português |
+| `en/index.html`, `fr/index.html` | Páginas em inglês e francês, só com ementa e informações práticas |
 | `css/styles.css` | Estilos |
-| `js/conteudo.js` | Horário, novidades, ementa, vinhos e sugestões do sommelier |
-| `js/main.js` | Estado aberto/fechado, ementa, carta de vinhos, sommelier e menu móvel |
+| `js/conteudo.js` | Horário, novidades, galeria, grupos, ementa, vinhos e sugestões do sommelier |
+| `js/traducao.en.js`, `js/traducao.fr.js` | Traduções; o que não estiver traduzido aparece em português |
+| `js/main.js` | Estado aberto/fechado, ementa, carta de vinhos, sommelier, galeria, grupos e menu móvel |
 | `assets/` | Imagens e tipos de letra alojados no próprio site |
 | `_headers` | Cabeçalhos de segurança para a Cloudflare Pages |
 
@@ -25,8 +27,12 @@ O conteúdo que muda com mais frequência está em `js/conteudo.js`. Quando exis
 
 ## Antes de publicar
 
-- [ ] Retirar `<meta name="robots" content="noindex">` do `index.html`
+- [ ] Retirar `<meta name="robots" content="noindex">` das três páginas
 - [ ] Substituir os vinhos de exemplo pela carta real
+- [ ] Substituir a capacidade e os menus de exemplo da secção de grupos
+- [ ] Rever as traduções em inglês e francês
+- [ ] Ativar o Cloudflare Web Analytics: Workers & Pages > projeto > Metrics > Enable
+- [ ] Trocar as fotografias de baixa resolução da galeria
 - [ ] Validar as sugestões do sommelier com o restaurante
 - [ ] Acrescentar preços e informação sobre alergénios
 - [ ] Confirmar horário, ementa e novidades com a gerente

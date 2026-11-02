@@ -2,6 +2,21 @@
   "use strict";
 
   var dados = window.COMPADRES;
+  var traducao = window.TRADUCAO || {};
+
+  // Sem tradução, o texto fica em português
+  function t(texto, valores) {
+    var resultado = traducao[texto] || texto;
+    Object.keys(valores || {}).forEach(function (chave) {
+      resultado = resultado.replace("{" + chave + "}", valores[chave]);
+    });
+    return resultado;
+  }
+
+  function nomeDoDiaNaFrase(dia) {
+    // Em inglês os dias da semana escrevem-se com maiúscula
+    return document.documentElement.lang === "en" ? t(dia) : t(dia).toLowerCase();
+  }
 
   function criar(tag, classe, texto) {
     var el = document.createElement(tag);
@@ -38,10 +53,10 @@
 
     for (var i = 0; i < hoje.length; i++) {
       if (agora.minutos >= emMinutos(hoje[i][0]) && agora.minutos < emMinutos(hoje[i][1])) {
-        return { aberto: true, texto: "Aberto agora, até às " + hoje[i][1] };
+        return { aberto: true, texto: t("Aberto agora, até às {h}", { h: hoje[i][1] }) };
       }
       if (agora.minutos < emMinutos(hoje[i][0])) {
-        return { aberto: false, texto: "Fechado agora. Abre hoje às " + hoje[i][0] };
+        return { aberto: false, texto: t("Fechado agora. Abre hoje às {h}", { h: hoje[i][0] }) };
       }
     }
 
@@ -49,11 +64,13 @@
       var indice = (agora.dia + n) % 7;
       var turnos = dados.horario[indice].turnos;
       if (turnos.length) {
-        var quando = n === 1 ? "amanhã" : dados.horario[indice].dia.toLowerCase();
-        return { aberto: false, texto: "Fechado agora. Abre " + quando + " às " + turnos[0][0] };
+        var texto = n === 1
+          ? t("Fechado agora. Abre amanhã às {h}", { h: turnos[0][0] })
+          : t("Fechado agora. Abre {dia} às {h}", { dia: nomeDoDiaNaFrase(dados.horario[indice].dia), h: turnos[0][0] });
+        return { aberto: false, texto: texto };
       }
     }
-    return { aberto: false, texto: "Fechado agora" };
+    return { aberto: false, texto: t("Fechado agora") };
   }
 
   function mostrarEstado() {
@@ -70,19 +87,58 @@
     [1, 2, 3, 4, 5, 6, 0].forEach(function (i) {
       var dia = dados.horario[i];
       var linha = criar("tr", i === hoje ? "hoje" : "");
-      var nome = criar("th", "", dia.dia);
+      var nome = criar("th", "", t(dia.dia));
       nome.scope = "row";
-      if (i === hoje) nome.appendChild(criar("span", "hoje__marca", "hoje"));
+      if (i === hoje) nome.appendChild(criar("span", "hoje__marca", t("hoje")));
       linha.appendChild(nome);
       var horas = dia.turnos.map(function (t) { return t[0] + "–" + t[1]; }).join(" · ");
-      linha.appendChild(criar("td", "", horas || "Encerrado"));
+      linha.appendChild(criar("td", "", horas || t("Encerrado")));
       corpo.appendChild(linha);
     });
   }
 
   function mostrarNovidades() {
     var lista = document.querySelector("[data-novidades]");
+    if (!lista) return;
     dados.novidades.forEach(function (n) { lista.appendChild(criar("li", "", n)); });
+  }
+
+  function mostrarGaleria() {
+    var galeria = document.querySelector("[data-galeria]");
+    if (!galeria) return;
+    dados.galeria.forEach(function (foto) {
+      var figura = criar("figure", "galeria__foto");
+      var img = criar("img");
+      img.src = foto.src;
+      img.alt = foto.alt;
+      img.width = foto.largura;
+      img.height = foto.altura;
+      img.loading = "lazy";
+      figura.appendChild(img);
+      if (foto.legenda) figura.appendChild(criar("figcaption", "", foto.legenda));
+      galeria.appendChild(figura);
+    });
+  }
+
+  function mostrarGrupos() {
+    var capacidade = document.querySelector("[data-grupos-capacidade]");
+    if (!capacidade) return;
+    if (dados.grupos.capacidade) {
+      capacidade.querySelector("dd").textContent = dados.grupos.capacidade;
+    } else {
+      capacidade.hidden = true;
+    }
+
+    var lista = document.querySelector("[data-grupos-menus]");
+    dados.grupos.menus.forEach(function (menu) {
+      var cartao = criar("li", "menu-grupo");
+      cartao.appendChild(criar("h3", "", menu.nome));
+      if (menu.preco) cartao.appendChild(criar("p", "menu-grupo__preco", menu.preco));
+      var pratos = criar("ul");
+      menu.pratos.forEach(function (prato) { pratos.appendChild(criar("li", "", prato)); });
+      cartao.appendChild(pratos);
+      lista.appendChild(cartao);
+    });
   }
 
   function listaDePratos(pratos) {
@@ -90,7 +146,7 @@
     pratos.forEach(function (prato) {
       var nome = typeof prato === "string" ? prato : prato.nome;
       var li = criar("li");
-      li.appendChild(criar("span", "ementa__nome", nome));
+      li.appendChild(criar("span", "ementa__nome", t(nome)));
       if (prato.preco) li.appendChild(criar("span", "ementa__preco", prato.preco));
       ul.appendChild(li);
     });
@@ -110,7 +166,7 @@
     });
     var semRegiao = vinhos.filter(function (v) { return !v.regiao; });
     if (semRegiao.length) {
-      regioes.push({ titulo: regioes.length ? "Outras regiões" : "", pratos: semRegiao });
+      regioes.push({ titulo: regioes.length ? t("Outras regiões") : "", pratos: semRegiao });
     }
     return regioes;
   }
@@ -127,8 +183,8 @@
   function blocoVinhoDaCasa() {
     var bloco = criar("div", "vinho-casa");
     var texto = criar("div");
-    texto.appendChild(criar("h3", "vinho-casa__titulo", "Vinho da casa"));
-    if (dados.vinhoDaCasa.descricao) texto.appendChild(criar("p", "", dados.vinhoDaCasa.descricao));
+    texto.appendChild(criar("h3", "vinho-casa__titulo", t("Vinho da casa")));
+    if (dados.vinhoDaCasa.descricao) texto.appendChild(criar("p", "", t(dados.vinhoDaCasa.descricao)));
     bloco.appendChild(texto);
     bloco.appendChild(listaDePratos(dados.vinhoDaCasa.opcoes));
     return bloco;
@@ -174,7 +230,7 @@
     }
 
     categorias.forEach(function (secao, i) {
-      var botao = criar("button", "ementa__separador", secao.categoria);
+      var botao = criar("button", "ementa__separador", t(secao.categoria));
       botao.type = "button";
       botao.id = "separador-" + i;
       botao.setAttribute("role", "tab");
@@ -191,7 +247,7 @@
       if (secao.vinhoDaCasa) painel.appendChild(blocoVinhoDaCasa());
       if (secao.grupos) {
         secao.grupos.forEach(function (grupo) {
-          painel.appendChild(criar("h3", "ementa__grupo", grupo.titulo));
+          painel.appendChild(criar("h3", "ementa__grupo", t(grupo.titulo)));
           painel.appendChild(grupo.regioes ? grelhaDeRegioes(grupo.regioes) : listaDePratos(grupo.pratos));
         });
       } else {
@@ -260,6 +316,7 @@
 
   function mostrarSommelier() {
     var seccao = document.getElementById("sommelier");
+    if (!seccao) return;
     var vinhos = todosOsVinhos();
     // Sem vinhos na carta, não há nada para sugerir
     if (!vinhos.length) {
@@ -346,6 +403,8 @@
   setInterval(mostrarEstado, 60000);
   mostrarHorario();
   mostrarNovidades();
+  mostrarGaleria();
+  mostrarGrupos();
   mostrarEmenta();
   mostrarSommelier();
   ativarMenuMovel();
